@@ -7,4 +7,4 @@
 The goal of lims.shiny is to enable easy exploration and aggregation of raw occurrence data extracted from LIMS software
 
 
-![screenshot](screenshot.jpg)
+![screenshot](www/screenshot.jpg)
