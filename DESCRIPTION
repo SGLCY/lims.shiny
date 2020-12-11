@@ -1,0 +1,32 @@
+Package: lims.shiny
+Title: Aggregate Occurrence Data to FoodEx1 and FoodEx2 Categorisation
+Version: 0.0.0.9001
+Authors@R: 
+    person(given = "Lefkios",
+           family = "Paikousis",
+           role = c("aut", "cre"),
+           email = "lefkiospaikousis@yahoo.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Upload occurrence data from the LIMS system and aggregates by FoodEx categorisation.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2
+Imports: 
+    shiny,
+    dplyr,
+    ggplot2,
+    readxl,
+    tidyr,
+    stringr,
+    purrr,
+    readr,
+    tibble,
+    forcats,
+    shinyFeedback,
+    shinyWidgets,
+    lubridate,
+    DT,
+    openxlsx,
+    shinythemes
