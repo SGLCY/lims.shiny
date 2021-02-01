@@ -19,11 +19,16 @@ to_na <- function(var) {
 #  Aggregate Occurence data -----------------------------------------------
 
 
-aggregate_occurrence <- function(data, .aggr_level){
+aggregate_occurrence <- function(data, t_uom, .aggr_level){
   
   # table of aggregate values
   tbl_average <- 
     data %>% 
+    # if μg/Kg
+    {if(t_uom =="μg/Kg") {
+      mutate(., across(ends_with("_res"), ~ . / 1000))
+    } else .
+    } %>% 
     group_by(across(all_of(.aggr_level))) %>% 
     summarise(
       N = n(),
@@ -56,10 +61,12 @@ aggregate_occurrence <- function(data, .aggr_level){
 make_ui <- function(x, var) {
   if (is.numeric(x)) {
     rng <- range(x, na.rm = TRUE)
-    sliderInput(var, var, min = rng[1], max = rng[2], value = rng)
+    label = get_col_label(var)
+    sliderInput(var, label, min = rng[1], max = rng[2], value = rng)
   } else if (is.factor(x) ) {
     levs <- levels(x)
-    shinyWidgets::pickerInput(var, var, 
+    label = get_col_label(var)
+    shinyWidgets::pickerInput(var, label, 
                               choices = levs, 
                               selected = levs, 
                               multiple = TRUE,
@@ -110,4 +117,14 @@ capture_data_info <- function(data){
 }
 
 
+get_col_label <- function(var){
+  
+  label <- dictionary_label_vector[[var]]
+  
+  if(is.na(label)){
+    return(var)
+  }  else 
+    return(label)
+  
+}
 
