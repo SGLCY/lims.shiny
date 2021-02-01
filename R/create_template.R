@@ -4,7 +4,7 @@ create_template_fdx1 <- function(dt_level2, dt_level3, substance_info){
   tbl_occurence_headers <- 
     tibble::tribble(
       ~...1,           ~...2,           ~...3,   ~...4, ~...5, ~...6,           ~...7,           ~...8,           ~...9,   ~...10, ~...11, ~...12, ~...13, ~...14, ~...15,
-      NA,              NA, "No of Samples", "mg/kg",    NA,    NA,              NA,              NA,              NA,       NA,     NA,     NA,     NA,     NA,     NA,
+      NA,              NA, "No of Samples (censored)", "mg/kg",    NA,    NA,              NA,              NA,              NA,       NA,     NA,     NA,     NA,     NA,     NA,
       NA,              NA,              NA,   "min",    NA,    NA,          "mean",              NA,              NA, "median",     NA,     NA,  "P95",     NA,     NA,
       "FoodExL1_name", "FoodExL2_name",              NA,    "LB",  "MB",  "UB", "Occur_Mean_LB", "Occur_Mean_MB", "Occur_Mean_UB",     "LB",   "MB",   "UB",   "LB",   "MB",   "UB"
     )
@@ -18,7 +18,7 @@ create_template_fdx1 <- function(dt_level2, dt_level3, substance_info){
   tbl_level3_headers <- 
     tibble::tribble(
       ~c,      ~d,   ~e,   ~f,              ~g,              ~h,              ~i,       ~j,   ~k,   ~l,    ~m,   ~n,   ~o,
-      "No of Samples", "mg/kg",  "-",  "-",             "-",             "-",             "-",      "-",  "-",  "-",   "-",  "-",  "-",
+      "No of Samples (censored)", "mg/kg",  "-",  "-",             "-",             "-",             "-",      "-",  "-",  "-",   "-",  "-",  "-",
       "-",   "min",  "-",  "-",          "mean",             "-",             "-", "median",  "-",  "-", "P95",  "-",  "-",
       "-",    "LB", "MB", "UB", "Occur_Mean_LB", "Occur_Mean_MB", "Occur_Mean_UB",     "LB", "MB", "UB",  "LB", "MB", "UB"
     )

@@ -32,12 +32,15 @@ aggregate_occurrence <- function(data, t_uom, .aggr_level){
     group_by(across(all_of(.aggr_level))) %>% 
     summarise(
       N = n(),
-      across(ends_with("_res"), occurrence_summary, .names = "{col}_{fn}"),
+      N_censored = sum(censored),
+      'N (N_censored)' = paste0(N, " (", N_censored, ")"),
+      across(ends_with("_res"), occurrence_summary, .names = "{col}_{fn}")
       #across(detect_lim, ~median(.), na.rm = TRUE, .names = "lod")
       #across(detect_lim, ~n_distinct(.), na.rm = TRUE, .names = "n_lod")
     ) %>% 
+    select(-N, -N_censored) %>% 
     relocate(
-      ends_with("_min"), ends_with("_mean"), ends_with("_median"), ends_with("_p95"), .after  = N
+      ends_with("_min"), ends_with("_mean"), ends_with("_median"), ends_with("_p95"), .after  = 'N (N_censored)'
     ) %>% 
     ungroup() 
   
