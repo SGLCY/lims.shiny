@@ -1,6 +1,6 @@
 Package: lims.shiny
 Title: Aggregate Occurrence Data to FoodEx1 and FoodEx2 Categorisation
-Version: 0.0.0.9001
+Version: 0.0.1
 Authors@R: 
     person(given = "Lefkios",
            family = "Paikousis",
