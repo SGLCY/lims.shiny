@@ -1,3 +1,11 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^Data$
+^SampleData$
+^Scripts$
+^upload_shinyapps\.R$
+^files_for_upload\.txt$
+^issues\.txt$
+^app\.R$
+^www$
