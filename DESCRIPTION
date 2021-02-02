@@ -29,4 +29,6 @@ Imports:
     lubridate,
     DT,
     openxlsx,
-    shinythemes
+    shinythemes,
+    waiter,
+    glue

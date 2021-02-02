@@ -61,7 +61,7 @@ exposure_type        <- c("DAILY", "WEEKLY")
 
 data_dictionary <- readxl::read_xlsx("Data/data_dictionary.xlsx") 
 dictionary_label_vector <- 
-  dictionary %>% 
+  data_dictionary %>% 
   select(var_id, var_label) %>% 
   tibble::deframe() %>% 
   # Some labels are not filled 
